@@ -47,3 +47,16 @@ h1
     position: relative;
     text-decoration: none;
 }
+
+td {
+    height: 150px;
+    width: 150px;
+}
+
+.shown {
+display:block;
+}
+
+.hidden {
+display:none;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lily</title>
+		<link  rel="stylesheet" type="text/css" href="Documents/Game_Score_Style.css" >
+
+	</head>
+	<body>
+		<h1 >Frenzy Balloons </h1>
+		<img src=http://icons.iconarchive.com/icons/succodesign/love-is-in-the-web/512/heart-icon.png class="heart-icon" id="heart1">
+		<img src=http://icons.iconarchive.com/icons/succodesign/love-is-in-the-web/512/heart-icon.png class="heart-icon" id="heart2">
+		<img src=http://icons.iconarchive.com/icons/succodesign/love-is-in-the-web/512/heart-icon.png class="heart-icon" id="heart3">
+	
+	
+
+	
+	<button id="clock" float="left" > Time Remaining: </button>
+
+	<table > 
+		<tr>
+			<td id=1 onclick="dim('1')" >a1</td>
+			<td id=2 onclick="dim('2')" >a2</td>
+			<td id=3 onclick="dim('3')" >a3</td>
+		</tr>
+
+		<tr>
+			<td id=4 onclick="dim('4')">b1</td>
+			<td id=5 onclick="dim('5')">b2</td>
+			<td id=6 onclick="dim('6')">b3</td>
+		</tr>
+
+
+		<tr>
+			<td id=7 onclick="dim('7')">c1</td>
+			<td id=8 onclick="dim('8')">c2</td>
+			<td id=9 onclick="dim('9')">c3</td>
+		</tr>
+	</table>
+	
+	
+<style>
+
+		h1 {
+			text-align: center; 
+			font-size: 10em;
+		}
+		
+		.heart-icon { 
+			max-width: 10%; 
+			float: right; 
+			margin-left: -3%;
+		}
+		
+		#clock {
+			font-size: 25px;
+		}
+
+		table{  
+			margin-left: 10%;
+			margin-right:10%;
+			display:inline block;
+			width: 80%;
+			height: 80%;
+		
+		}
+		
+		table tr td {
+			border: 2px solid black;
+			text-align: center;
+			padding: 12%;
+			font-size: 3em;
+			border-radius: 70%;
+		}
+
+</style>
+
+
+<script>
+
+var dim= function(id){
+	var thisSquare=document.getElementById(id);
+	if(thisSquare.style.backgroundColor=='blue'){
+		thisSquare.style.borderColor='black';
+		thisSquare.style.backgroundColor='';
+		thisSquare.style.color='black';
+		
+	} else {
+		thisSquare.style.borderColor='blue blue';
+		thisSquare.style.backgroundColor='blue';
+		thisSquare.style.color='blue';
+	}
+
+}
+	
+	
+
+var minvalue=10;
+var maxvalue=70;
+var get2num=function(min,max, firstbox, secondbox){
+	var firstnumber = randomIntFromInterval(min,max)
+	document.getElementById(firstbox). innerHTML=firstnumber;
+
+	document.getElementById(secondbox). innerHTML=101- firstnumber;
+}
+
+var randomIntFromInterval=function (min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+
+/*var bucket = [];
+
+for (var i=1;i<=9;i++) {
+    bucket.push(i);
+}
+
+function getRandomFromBucket() {
+   var randomIndex = Math.floor(Math.random()*bucket.length);
+   return bucket.splice(randomIndex, 1)[0];
+}
+
+will pick a random number between 0 and 10, and can be called 10 times
+document.getElementById(2). innerHTML=getRandomFromBucket();
+*/
+
+
+get2num(minvalue, maxvalue, 1, 2);
+get2num(minvalue, maxvalue, 3, 4);
+get2num(minvalue, maxvalue, 5, 6);
+get2num(minvalue, maxvalue, 7, 8);
+
+
+
+// Scoring
+/*
+if(a+b===101){
+score+=10;
+//changebackgroundcolor to something vibrant
+}
+else{
+//change background color to normal style
+}
+if (score==100){
+alert("Congrats, you've passed the level!");
+//clear everything and show fireworks
+}
+else {}
+*/
+
+//new score
+/*
+if (score>highscore){
+highscore=score;
+alert("Yay, new high score");
+}
+else{
+alert("You can do better next time.");
+}
+*/
+
+
+
+
+
+
+</script>
+</body>
+</html>
